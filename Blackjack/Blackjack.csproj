@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6836612D-C023-4190-9C95-AFE3B39F4014}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blackjack</RootNamespace>
+    <AssemblyName>Blackjack</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidSupportedAbis>armeabi-v7a%3bx86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions>.m4a</AndroidStoreUncompressedFileExtensions>
+    <MandroidI18n />
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <MonoGamePlatform>Android</MonoGamePlatform>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="OpenTK-1.0" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Android\MonoGame.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activity1.cs" />
+    <Compile Include="BlackjackGame.cs" />
+    <Compile Include="Blackjack\Game\BlackjackCardGame.cs" />
+    <Compile Include="Blackjack\Misc\BetGameComponent.cs" />
+    <Compile Include="Blackjack\Players\BlackjackAIPlayer.cs" />
+    <Compile Include="Blackjack\Players\BlackjackPlayer.cs" />
+    <Compile Include="Blackjack\Rules\BlackjackGameEventArgs.cs" />
+    <Compile Include="Blackjack\Rules\BlackjackRule.cs" />
+    <Compile Include="Blackjack\Rules\BustRule.cs" />
+    <Compile Include="Blackjack\Rules\InsuranceRule.cs" />
+    <Compile Include="Blackjack\UI\BlackjackAnimatedDealerHandComponent.cs" />
+    <Compile Include="Blackjack\UI\BlackJackAnimatedPlayerHandComponent.cs" />
+    <Compile Include="Blackjack\UI\BlackjackTable.cs" />
+    <Compile Include="Blackjack\UI\Button.cs" />
+    <Compile Include="Misc\AudioManager.cs" />
+    <Compile Include="Misc\InputHelper.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenManager\GameScreen.cs" />
+    <Compile Include="ScreenManager\InputState.cs" />
+    <Compile Include="ScreenManager\MenuEntry.cs" />
+    <Compile Include="ScreenManager\MenuScreen.cs" />
+    <Compile Include="ScreenManager\PlayerIndexEventArgs.cs" />
+    <Compile Include="ScreenManager\ScreenManager.cs" />
+    <Compile Include="Screens\BackgroundScreen.cs" />
+    <Compile Include="Screens\GameplayScreen.cs" />
+    <Compile Include="Screens\InstructionScreen.cs" />
+    <Compile Include="Screens\MainMenuScreen.cs" />
+    <Compile Include="Screens\OptionsMenu.cs" />
+    <Compile Include="Screens\PauseScreen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\Fonts\Bold.spritefont">
+      <SubType>Designer</SubType>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\Content\Fonts\Bold.xnb" />
+    <AndroidAsset Include="Assets\Content\Fonts\MenuFont.spritefont" />
+    <AndroidAsset Include="Assets\Content\Fonts\MenuFont.xnb" />
+    <AndroidAsset Include="Assets\Content\Fonts\Regular.spritefont" />
+    <AndroidAsset Include="Assets\Content\Fonts\Regular.xnb" />
+    <None Include="Content\Blackjack.mgcb" />
+    <None Include="Content\Fonts\Bold.spritefont" />
+    <None Include="Content\Fonts\Bold.xnb" />
+    <None Include="Content\Fonts\MenuFont.spritefont" />
+    <None Include="Content\Fonts\MenuFont.xnb" />
+    <None Include="Content\Fonts\Regular.spritefont" />
+    <None Include="Content\Fonts\Regular.xnb" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Layout\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CardsFramework.Android\CardsFramework.Android.csproj">
+      <Project>{ef8b263e-928d-46f4-88d4-33a5bb60e9c8}</Project>
+      <Name>CardsFramework.Android</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\Images\Cards\CardBack_Blue.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\CardBack_Red.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubAce.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubEight.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubFive.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubFour.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubJack.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubKing.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubNine.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubQueen.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubSeven.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubSix.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubTen.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubThree.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\ClubTwo.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondAce.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondEight.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondFive.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondFour.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondJack.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondKing.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondNine.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondQueen.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondSeven.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondSix.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondTen.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondThree.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\DiamondTwo.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\FirstJoker.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartAce.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartEight.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartFive.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartFour.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartJack.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartKing.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartNine.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartQueen.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartSeven.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartSix.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartTen.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartThree.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\HeartTwo.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SecondJoker.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeAce.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeEight.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeFive.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeFour.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeJack.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeKing.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeNine.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeQueen.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeSeven.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeSix.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeTen.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeThree.png" />
+    <AndroidAsset Include="Assets\Content\Images\Cards\SpadeTwo.png" />
+    <AndroidAsset Include="Assets\Content\Images\Chips\chip100.png" />
+    <AndroidAsset Include="Assets\Content\Images\Chips\chip25.png" />
+    <AndroidAsset Include="Assets\Content\Images\Chips\chip5.png" />
+    <AndroidAsset Include="Assets\Content\Images\Chips\chip500.png" />
+    <AndroidAsset Include="Assets\Content\Images\Chips\chipBlack.png" />
+    <AndroidAsset Include="Assets\Content\Images\Chips\chipRed.png" />
+    <AndroidAsset Include="Assets\Content\Images\Chips\chipWhite.png" />
+    <AndroidAsset Include="Assets\Content\Images\Chips\chipYellow.png" />
+    <AndroidAsset Include="Assets\Content\Images\UI\blackjack.png" />
+    <AndroidAsset Include="Assets\Content\Images\UI\bust.png" />
+    <AndroidAsset Include="Assets\Content\Images\UI\lose.png" />
+    <AndroidAsset Include="Assets\Content\Images\UI\pass.png" />
+    <AndroidAsset Include="Assets\Content\Images\UI\push.png" />
+    <AndroidAsset Include="Assets\Content\Images\UI\ring.png" />
+    <AndroidAsset Include="Assets\Content\Images\UI\Shuffle_Blue.png" />
+    <AndroidAsset Include="Assets\Content\Images\UI\Shuffle_Red.png" />
+    <AndroidAsset Include="Assets\Content\Images\UI\table - Copy.png" />
+    <AndroidAsset Include="Assets\Content\Images\UI\table.png" />
+    <AndroidAsset Include="Assets\Content\Images\UI\win.png" />
+    <AndroidAsset Include="Assets\Content\Images\blank.png" />
+    <AndroidAsset Include="Assets\Content\Images\Button.png" />
+    <AndroidAsset Include="Assets\Content\Images\ButtonPressed.png" />
+    <AndroidAsset Include="Assets\Content\Images\ButtonRegular.png" />
+    <AndroidAsset Include="Assets\Content\Images\GamePadCursor.png" />
+    <AndroidAsset Include="Assets\Content\Images\instructions.png" />
+    <AndroidAsset Include="Assets\Content\Images\titlescreen.png" />
+    <AndroidAsset Include="Assets\Content\Images\youLose.png" />
+    <AndroidAsset Include="Assets\Content\Sounds\Bet.wav" />
+    <AndroidAsset Include="Assets\Content\Sounds\CardFlip.wav" />
+    <AndroidAsset Include="Assets\Content\Sounds\CardsShuffle.wav" />
+    <AndroidAsset Include="Assets\Content\Sounds\Deal.wav" />
+    <Content Include="Background.png" />
+    <Content Include="Content\Images\blank.png" />
+    <Content Include="Content\Images\Button.png" />
+    <Content Include="Content\Images\ButtonPressed.png" />
+    <Content Include="Content\Images\ButtonRegular.png" />
+    <Content Include="Content\Images\Cards\CardBack_Blue.png" />
+    <Content Include="Content\Images\Cards\CardBack_Red.png" />
+    <Content Include="Content\Images\Cards\ClubAce.png" />
+    <Content Include="Content\Images\Cards\ClubEight.png" />
+    <Content Include="Content\Images\Cards\ClubFive.png" />
+    <Content Include="Content\Images\Cards\ClubFour.png" />
+    <Content Include="Content\Images\Cards\ClubJack.png" />
+    <Content Include="Content\Images\Cards\ClubKing.png" />
+    <Content Include="Content\Images\Cards\ClubNine.png" />
+    <Content Include="Content\Images\Cards\ClubQueen.png" />
+    <Content Include="Content\Images\Cards\ClubSeven.png" />
+    <Content Include="Content\Images\Cards\ClubSix.png" />
+    <Content Include="Content\Images\Cards\ClubTen.png" />
+    <Content Include="Content\Images\Cards\ClubThree.png" />
+    <Content Include="Content\Images\Cards\ClubTwo.png" />
+    <Content Include="Content\Images\Cards\DiamondAce.png" />
+    <Content Include="Content\Images\Cards\DiamondEight.png" />
+    <Content Include="Content\Images\Cards\DiamondFive.png" />
+    <Content Include="Content\Images\Cards\DiamondFour.png" />
+    <Content Include="Content\Images\Cards\DiamondJack.png" />
+    <Content Include="Content\Images\Cards\DiamondKing.png" />
+    <Content Include="Content\Images\Cards\DiamondNine.png" />
+    <Content Include="Content\Images\Cards\DiamondQueen.png" />
+    <Content Include="Content\Images\Cards\DiamondSeven.png" />
+    <Content Include="Content\Images\Cards\DiamondSix.png" />
+    <Content Include="Content\Images\Cards\DiamondTen.png" />
+    <Content Include="Content\Images\Cards\DiamondThree.png" />
+    <Content Include="Content\Images\Cards\DiamondTwo.png" />
+    <Content Include="Content\Images\Cards\FirstJoker.png" />
+    <Content Include="Content\Images\Cards\HeartAce.png" />
+    <Content Include="Content\Images\Cards\HeartEight.png" />
+    <Content Include="Content\Images\Cards\HeartFive.png" />
+    <Content Include="Content\Images\Cards\HeartFour.png" />
+    <Content Include="Content\Images\Cards\HeartJack.png" />
+    <Content Include="Content\Images\Cards\HeartKing.png" />
+    <Content Include="Content\Images\Cards\HeartNine.png" />
+    <Content Include="Content\Images\Cards\HeartQueen.png" />
+    <Content Include="Content\Images\Cards\HeartSeven.png" />
+    <Content Include="Content\Images\Cards\HeartSix.png" />
+    <Content Include="Content\Images\Cards\HeartTen.png" />
+    <Content Include="Content\Images\Cards\HeartThree.png" />
+    <Content Include="Content\Images\Cards\HeartTwo.png" />
+    <Content Include="Content\Images\Cards\SecondJoker.png" />
+    <Content Include="Content\Images\Cards\SpadeAce.png" />
+    <Content Include="Content\Images\Cards\SpadeEight.png" />
+    <Content Include="Content\Images\Cards\SpadeFive.png" />
+    <Content Include="Content\Images\Cards\SpadeFour.png" />
+    <Content Include="Content\Images\Cards\SpadeJack.png" />
+    <Content Include="Content\Images\Cards\SpadeKing.png" />
+    <Content Include="Content\Images\Cards\SpadeNine.png" />
+    <Content Include="Content\Images\Cards\SpadeQueen.png" />
+    <Content Include="Content\Images\Cards\SpadeSeven.png" />
+    <Content Include="Content\Images\Cards\SpadeSix.png" />
+    <Content Include="Content\Images\Cards\SpadeTen.png" />
+    <Content Include="Content\Images\Cards\SpadeThree.png" />
+    <Content Include="Content\Images\Cards\SpadeTwo.png" />
+    <Content Include="Content\Images\Chips\chip100.png" />
+    <Content Include="Content\Images\Chips\chip25.png" />
+    <Content Include="Content\Images\Chips\chip5.png" />
+    <Content Include="Content\Images\Chips\chip500.png" />
+    <Content Include="Content\Images\Chips\chipBlack.png" />
+    <Content Include="Content\Images\Chips\chipRed.png" />
+    <Content Include="Content\Images\Chips\chipWhite.png" />
+    <Content Include="Content\Images\Chips\chipYellow.png" />
+    <Content Include="Content\Images\GamePadCursor.png" />
+    <Content Include="Content\Images\instructions.png" />
+    <Content Include="Content\Images\titlescreen.png" />
+    <Content Include="Content\Images\UI\blackjack.png" />
+    <Content Include="Content\Images\UI\bust.png" />
+    <Content Include="Content\Images\UI\lose.png" />
+    <Content Include="Content\Images\UI\pass.png" />
+    <Content Include="Content\Images\UI\push.png" />
+    <Content Include="Content\Images\UI\ring.png" />
+    <Content Include="Content\Images\UI\Shuffle_Blue.png" />
+    <Content Include="Content\Images\UI\Shuffle_Red.png" />
+    <Content Include="Content\Images\UI\table - Copy.png" />
+    <Content Include="Content\Images\UI\table.png" />
+    <Content Include="Content\Images\UI\win.png" />
+    <Content Include="Content\Images\youLose.png" />
+    <Content Include="Content\Sounds\Bet.wav" />
+    <Content Include="Content\Sounds\CardFlip.wav" />
+    <Content Include="Content\Sounds\CardsShuffle.wav" />
+    <Content Include="Content\Sounds\Deal.wav" />
+    <Content Include="GameThumbnail.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

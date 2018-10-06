@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs
+/Blackjack/bin/Android/AnyCPU/Debug
+/Blackjack/Content/obj/Android
+/Blackjack/obj/Debug
+/CardsFramework.Android/bin/Android/AnyCPU/Debug
+/CardsFramework.Android/obj/Debug
+/Blackjack/Content/bin/Android
